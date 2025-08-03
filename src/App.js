@@ -42,9 +42,9 @@ const shoppingData = [
 ];
 
 const tabs = [
-  { label: 'Iron & Hair Growth', color: '#f44f8f' },
-  { label: 'Period Care', color: '#f44f8f' },
-  { label: 'Shopping List', color: '#1ec28b' },
+  { label: 'Iron & Hair Growth', color: '#000000ff' },
+  { label: 'Periods Care', color: '#f44f8f' },
+  { label: 'Shopping List', color: '#1e3cc2ff' },
 ];
 
 function App() {
@@ -128,7 +128,7 @@ function App() {
         {activeTab === 2 && (
           <section>
             <div className="section-title-wrapper">
-              <h2 className="section-title gradient-text">Instamart / Zepto lo Buy Cheyyavachina Items</h2>
+              <h2 className="section-title gradient-text">Instamart / Zepto / Blinkit lo koneyvachhu anukune Items</h2>
             </div>
             <div className="table-container">
               <table className="food-table">
