@@ -1,38 +1,294 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body, html, #root, .app-bg {
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #7b2ff2 0%, #f357a8 100%);
+  color: #3a2766;
+}
+
+.app-bg {
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+.header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem 1rem;
+  color: #fff;
+  background: linear-gradient(120deg, #7b2ff2 0%, #f357a8 100%);
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 4px 24px 0 rgba(123,47,242,0.10);
+}
+.header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 1px;
+}
+.header p {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  opacity: 0.95;
+}
+.header-icons {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.tabs {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1.5rem;
+  margin: 2rem 0 1.5rem 0;
+}
+.tab-btn {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.7rem 2.2rem;
+  border: none;
+  border-radius: 1.5rem;
+  background: #fff;
+  color: #f44f8f;
+  box-shadow: 0 2px 8px 0 rgba(244,79,143,0.10);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: fit-content;
+}
+.tab-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px 0 rgba(244,79,143,0.15);
+}
+.tab-btn.active {
+  background: #f44f8f;
+  color: #fff;
+  box-shadow: 0 4px 16px 0 rgba(244,79,143,0.18);
+}
+.tabs .tab-btn:last-child,
+.tab-btn[style*='#1ec28b'] {
+  background: #fff;
+  color: #1ec28b;
+}
+.tab-btn.active[style*='#1ec28b'] {
+  background: #1ec28b;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.main-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 0 1rem;
+}
+.section-title-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  background: rgba(40, 18, 60, 0.92);
+  color: #fff;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 12px 0 rgba(123,47,242,0.10);
+  border-radius: 1.2rem;
+  padding: 1rem 2rem;
+  margin: 0;
+  display: inline-block;
+  text-shadow: 0 2px 8px rgba(123,47,242,0.10);
+}
+.gradient-text {
+  background: linear-gradient(90deg, #a259e6 0%, #f357a8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #fff;
+  background-clip: text;
+  color: #fff;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+.section-title span {
+  color: #fff;
+  font-weight: 900;
+  text-shadow: 0 2px 8px rgba(123,47,242,0.10);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.table-container {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 16px 0 rgba(123,47,242,0.08);
+  padding: 1.5rem 1rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+.food-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 16px 0; /* horizontal gap between th */
+  font-size: 1.05rem;
+  background: transparent;
+}
+.food-table thead {
+  background: transparent;
+}
+.food-table tr {
+  transition: background-color 0.2s ease;
+}
+.food-table tr:hover {
+  background-color: #faf7ff;
+}
+.food-table th {
+  background: linear-gradient(90deg, #a259e6 0%, #f357a8 100%);
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-size: 1.1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px 0 rgba(123,47,242,0.08);
+  border-radius: 0;
+}
+.food-table th:first-child {
+  border-top-left-radius: 1.2rem;
+  border-bottom-left-radius: 1.2rem;
+}
+.food-table th:last-child {
+  border-top-right-radius: 1.2rem;
+  border-bottom-right-radius: 1.2rem;
+}
+.food-table td {
+  padding: 0.8rem 0.7rem;
+  border-bottom: 1px solid #f3e8ff;
+  vertical-align: top;
+  background: transparent;
+}
+.food-table tr:last-child td {
+  border-bottom: none;
+}
+.icon {
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 768px) {
+  .header {
+    padding: 2rem 1rem 1.5rem 1rem;
+    border-radius: 0 0 1.5rem 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  .header p {
+    font-size: 1rem;
+  }
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 1rem;
+  }
+  .tab-btn {
+    width: 80%;
+    max-width: 300px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  .main-content {
+    padding: 1rem 0.5rem 0 0.5rem;
+  }
+  .section-title {
+    font-size: 1.4rem;
+    padding: 0.7rem 1rem;
+    color: #fff;
+  }
+  .section-title-wrapper {
+    margin-bottom: 0.7rem;
+  }
+  .table-container {
+    padding: 1rem 0.5rem;
+    border-radius: 1rem;
+  }
+  .food-table {
+    border-spacing: 8px 0;
+  }
+  .food-table th, .food-table td {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.4rem;
+  }
+  .food-table th:first-child {
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+  }
+  .food-table th:last-child {
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+  }
+  .icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
+  }
+  .header h1 {
+    font-size: 1.6rem;
+  }
+  .header p {
+    font-size: 0.9rem;
+  }
+  .header-icons {
+    font-size: 1.3rem;
+  }
+  .tabs {
+    margin: 1rem 0.5rem;
+  }
+  .tab-btn {
+    width: 90%;
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+  }
+  .main-content {
+    padding: 0.5rem 0.3rem 0 0.3rem;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    padding: 0.5rem 0.5rem;
+    color: #fff;
+  }
+  .section-title-wrapper {
+    margin-bottom: 0.5rem;
+  }
+  .table-container {
+    padding: 0.8rem 0.3rem;
+    margin-bottom: 1.5rem;
+  }
+  .food-table {
+    font-size: 0.85rem;
+    border-spacing: 4px 0;
+  }
+  .food-table th, .food-table td {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.8rem;
+  }
+  .food-table th:first-child {
+    border-top-left-radius: 0.6rem;
+    border-bottom-left-radius: 0.6rem;
+  }
+  .food-table th:last-child {
+    border-top-right-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+  }
+  .food-table th {
+    font-size: 0.85rem;
   }
 }
